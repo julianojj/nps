@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 16px;
+            color: #333;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body style="background-color: #fff;">
+    <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <div style="padding: 16px;">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640&q=80" alt="search" style="width: 100%;" />
+        </div>
+        <div style="padding: 16px; font-size: 24px; font-weight: 700;">
+            Olá, Sr.(a) <%= name %>
+        </div>
+        <div style="padding: 16px;">
+            Obrigado por escolher nossos produtos
+        </div>
+        <div style="padding: 16px;">
+            Está é uma simples pesquisa de satisfação que você pode responder em questão de segundos!
+        </div>
+        <div style="padding: 16px;">
+            <a href="<%= url %>">Link para a pesquisa</a>
+        </div>
+        <div style="padding: 16px;">
+            Se preferir, basta escanear o QrCode abaixo:
+        </div>
+        <div style="padding: 16px;">
+            <img src="https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=<%= url %>" alt="url">
+        </div>
+    </div>
+</body>
+</html>
