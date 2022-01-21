@@ -46,10 +46,22 @@ const getEvaluationByCustomerId = async (customer_id) => {
     return evaluation.recordset[0]
 }
 
+const getEvaluationCurrencyDate = async () => {
+    const conn = await database.connect()
+    const evaluations = await conn.query(`select count(E.brand) total,
+    E.brand
+    from vw_evaluations E
+    WHERE MONTH(E.evaluation_date)  = MONTH(GETDATE())
+    AND YEAR(E.evaluation_date) = YEAR(GETDATE())
+    GROUP BY brand`)
+    await conn.close()
+    return evaluations.recordset
+}
 
 module.exports = {
     newEvaluation,
     getEvaluations,
     getEvaluation,
     getEvaluationByCustomerId,
+    getEvaluationCurrencyDate,
 }

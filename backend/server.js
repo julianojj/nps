@@ -15,6 +15,7 @@ app.use('/public', express.static('public'))
 app.use('/v1', require('./src/route/CustomerRoute'))
 app.use('/v1', require('./src/route/EvaluationRoute'))
 app.use('/v1', require('./src/route/MailRoute'))
+app.use('/v1', require('./src/route/NPSRoute'))
 
 app.use((req, res, next) => {
     res.status(404).json({
